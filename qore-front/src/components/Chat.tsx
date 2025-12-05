@@ -64,24 +64,55 @@ export const ChatComponent: React.FC = () => {
     setInput('');
     setIsLoading(true);
 
-    // Simulate AI response (replace with actual API call)
-    setTimeout(() => {
-      const responses = [
-        'That\'s a great question! Let me help you with that.',
-        'I understand you\'re looking for information about universities in Kazakhstan. I can provide details about programs, admission requirements, and more.',
-        'Thank you for your question. Based on our database, I can help you find the best university options.',
-        'I\'d be happy to assist you with university selection and application process.',
-      ];
+    try {
+      const resp = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage.content }),
+      });
+
+      if (!resp.ok) {
+        const txt = await resp.text();
+        throw new Error(`Server error: ${txt}`);
+      }
+
+      const data = await resp.json();
+
+      // The API returns a `text` field (may be raw string). Try to extract readable text.
+      let aiText: string = '';
+      if (data?.text) {
+        aiText = typeof data.text === 'string' ? data.text : JSON.stringify(data.text);
+      } else if (typeof data === 'string') {
+        aiText = data;
+      }
+
+      // Sometimes the model output may be JSON encoded inside the text; attempt safe parse
+      try {
+        const parsed = JSON.parse(aiText);
+        if (typeof parsed === 'string') aiText = parsed;
+        else if (parsed?.choices?.[0]?.text) aiText = parsed.choices[0].text;
+        else aiText = JSON.stringify(parsed);
+      } catch (e) {
+        // not JSON, keep as-is
+      }
 
       const aiMessage: Message = {
         sender: 'qore',
-        content: responses[Math.floor(Math.random() * responses.length)],
+        content: aiText.trim() || 'Sorry, I could not generate a response.',
         timestamp: new Date(),
       };
 
       setMessages((prev) => [...prev, aiMessage]);
+    } catch (err) {
+      const aiMessage: Message = {
+        sender: 'qore',
+        content: 'Произошла ошибка при подключении к AI сервису. Попробуйте позже.',
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, aiMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1000 + Math.random() * 1000);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
