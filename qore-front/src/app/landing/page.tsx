@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrustedBySection from '@/components/TrustedBySection';
 import './page.css';
+import Link from 'next/link';
 
 export default function LandingPage() {
   return (
@@ -41,131 +42,143 @@ export default function LandingPage() {
           <p className="section-subtitle">Discover leading educational institutions across Kazakhstan</p>
           
           <div className="universities-grid">
-            <div className="university-card">
-              <div className="university-image">
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" alt="Nazarbayev University" />
-              </div>
-              <div className="university-content">
-                <h3 className="university-name">Nazarbayev University</h3>
-                <p className="university-description">Premier research university with international partnerships</p>
-                <div className="university-rating">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
-                  </svg>
-                  <span>4.8</span>
+            <Link href="/universities/nazarbayev" className="university-card-link">
+              <div className="university-card">
+                <div className="university-image">
+                  <img src="/NU.jpg" alt="Nazarbayev University" />
                 </div>
-                <div className="card-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="university-content">
+                  <h3 className="university-name">Nazarbayev University</h3>
+                  <p className="university-description">Premier research university with international partnerships</p>
+                  <div className="university-rating">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
+                    </svg>
+                    <span>4.8</span>
+                  </div>
+                  <div className="card-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="university-card">
-              <div className="university-image">
-                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80" alt="Al-Farabi KazNU" />
-              </div>
-              <div className="university-content">
-                <h3 className="university-name">Al-Farabi KazNU</h3>
-                <p className="university-description">Leading classical university with diverse academic programs</p>
-                <div className="university-rating">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
-                  </svg>
-                  <span>4.6</span>
+            <Link href="/universities/kaznu" className="university-card-link">
+              <div className="university-card">
+                <div className="university-image">
+                  <img src= "/Kaznu.jpg" alt="Al-Farabi KazNU" />
                 </div>
-                <div className="card-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="university-content">
+                  <h3 className="university-name">Al-Farabi KazNU</h3>
+                  <p className="university-description">Leading classical university with diverse academic programs</p>
+                  <div className="university-rating">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
+                    </svg>
+                    <span>4.6</span>
+                  </div>
+                  <div className="card-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="university-card">
-              <div className="university-image">
-                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80" alt="Satbayev University" />
-              </div>
-              <div className="university-content">
-                <h3 className="university-name">Satbayev University</h3>
-                <p className="university-description">Top technical university specializing in engineering and technology</p>
-                <div className="university-rating">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
-                  </svg>
-                  <span>4.7</span>
+            <Link href="/universities/satbayev" className="university-card-link">
+              <div className="university-card">
+                <div className="university-image">
+                  <img src="/Satbayev.jpg" alt="Satbayev University" />
                 </div>
-                <div className="card-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="university-content">
+                  <h3 className="university-name">Satbayev University</h3>
+                  <p className="university-description">Top technical university specializing in engineering and technology</p>
+                  <div className="university-rating">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
+                    </svg>
+                    <span>4.7</span>
+                  </div>
+                  <div className="card-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="university-card">
-              <div className="university-image">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="IITU" />
-              </div>
-              <div className="university-content">
-                <h3 className="university-name">IITU</h3>
-                <p className="university-description">International Information Technologies University</p>
-                <div className="university-rating">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
-                  </svg>
-                  <span>4.5</span>
+            <Link href="/universities/iitu" className="university-card-link">
+              <div className="university-card">
+                <div className="university-image">
+                  <img src="/IITU.jpg" alt="IITU" />
                 </div>
-                <div className="card-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="university-content">
+                  <h3 className="university-name">IITU</h3>
+                  <p className="university-description">International Information Technologies University</p>
+                  <div className="university-rating">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
+                    </svg>
+                    <span>4.5</span>
+                  </div>
+                  <div className="card-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="university-card">
-              <div className="university-image">
-                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&q=80" alt="MNU" />
-              </div>
-              <div className="university-content">
-                <h3 className="university-name">MNU</h3>
-                <p className="university-description">Modern university with innovative programs</p>
-                <div className="university-rating">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
-                  </svg>
-                  <span>4.4</span>
+            <Link href="/universities/mnu" className="university-card-link">
+              <div className="university-card">
+                <div className="university-image">
+                  <img src="/MNU.jpg" alt="MNU" />
                 </div>
-                <div className="card-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="university-content">
+                  <h3 className="university-name">MNU</h3>
+                  <p className="university-description">Modern university with innovative programs</p>
+                  <div className="university-rating">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
+                    </svg>
+                    <span>4.4</span>
+                  </div>
+                  <div className="card-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="university-card">
-              <div className="university-image">
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" alt="KBTU" />
-              </div>
-              <div className="university-content">
-                <h3 className="university-name">KBTU</h3>
-                <p className="university-description">Kazakh-British Technical University with international standards</p>
-                <div className="university-rating">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
-                  </svg>
-                  <span>4.6</span>
+            <Link href="/universities/kbtu" className="university-card-link">
+              <div className="university-card">
+                <div className="university-image">
+                  <img src="/KBTU.jpeg" alt="KBTU" />
                 </div>
-                <div className="card-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="university-content">
+                  <h3 className="university-name">KBTU</h3>
+                  <p className="university-description">Kazakh-British Technical University with international standards</p>
+                  <div className="university-rating">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0L10.163 5.52786L16 6.11146L11.8541 9.97214L12.9443 16L8 13.0279L3.05573 16L4.1459 9.97214L0 6.11146L5.83697 5.52786L8 0Z" fill="#00FF88"/>
+                    </svg>
+                    <span>4.6</span>
+                  </div>
+                  <div className="card-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -236,7 +249,7 @@ export default function LandingPage() {
                     <option value="nazarbayev">Nazarbayev University</option>
                     <option value="alfarabi">Al-Farabi KazNU</option>
                     <option value="satbayev">Satbayev University</option>
-                    <option value="IITU">International Information Technoligies University</option>
+                    <option value="iitu">International Information Technoligies University</option>
                     <option value="kbtu">Kazakh-British Technical University</option>
                   </select>
                 </div>
@@ -305,4 +318,3 @@ export default function LandingPage() {
     </div>
   );
 }
-

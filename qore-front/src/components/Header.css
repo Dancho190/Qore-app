@@ -197,6 +197,19 @@
   left: 100%;
 }
 
+.header-actions .header-chat-btn {
+  background: #0b0b0b; /* neutral black */
+  color: #ffffff;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
 @media (max-width: 768px) {
   .header-nav {
     display: none;

@@ -21,22 +21,15 @@ const applicationSchema = z.object({
   iin: z.string().min(12, 'IIN must be 12 digits').max(12, 'IIN must be 12 digits').regex(/^\d+$/, 'IIN must contain only numbers'),
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
-  university: z.enum(['kbtu', 'mnu', 'kaznu', 'satbayev', 'iitu', 'nazarbayev'], {
-    required_error: 'Please select a university',
-  }),
-  program: z.enum(['bachelor', 'master', 'phd'], {
-    required_error: 'Please select a program',
-  }),
   age: z.number().min(16, 'Age must be at least 16').max(100, 'Age must be less than 100'),
   entScore: z.number().min(0, 'ENT score must be positive').max(140, 'ENT score cannot exceed 140'),
   ielts: z.number().min(0, 'IELTS score must be positive').max(9, 'IELTS score cannot exceed 9').optional(),
   nuet: z.number().min(0, 'NUET score must be positive').max(100, 'NUET score cannot exceed 100').optional(),
   sat: z.number().min(400, 'SAT score must be at least 400').max(1600, 'SAT score cannot exceed 1600').optional(),
-  studyType: z.enum(['scholarship', 'paid'], {
-    required_error: 'Please select study type',
-  }),
+  university: z.enum(['kbtu', 'mnu', 'kaznu', 'satbayev', 'iitu', 'nazarbayev']),
+  program: z.enum(['bachelor', 'master', 'phd']),
+  studyType: z.enum(['scholarship', 'paid']),
 }).refine((data) => {
-  // NUET is required only for Nazarbayev University
   if (data.university === 'nazarbayev' && !data.nuet) {
     return false;
   }
