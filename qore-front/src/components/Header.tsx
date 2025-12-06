@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { ChatComponent } from './Chat';
 import './Header.css';
@@ -27,7 +26,7 @@ export default function Header({ showChat = false }: HeaderProps) {
           <nav className="header-nav">
             <Link href="/universities" className="nav-link">Universities</Link>
             <Link href="/programs" className="nav-link">Programs</Link>
-            <Link href="/tours" className="nav-link">Tours</Link>
+            <Link href="/panorama" className="nav-link">Panorama</Link>
             <Link href="/compare" className="nav-link">Compare</Link>
             <Link href="/about" className="nav-link">About</Link>
           </nav>
